@@ -85,6 +85,9 @@ Here it the level will be solved if we fetch the row with id = admin but in the 
 
 # Level 3 - Orc
 
+
+
+
 ```php
 <?php 
   include "./config.php"; 
@@ -103,9 +106,15 @@ Here it the level will be solved if we fetch the row with id = admin but in the 
   highlight_file(__FILE__); 
 ?>
 ```
+
+
 Here we can get the actual password using a blind sql Injection . 
 
+
+
 ## Exploit Script 
+
+
 
 ```python
 import requests
