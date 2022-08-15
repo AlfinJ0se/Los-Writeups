@@ -105,15 +105,14 @@ Here it the level will be solved if we fetch the row with id = admin but in the 
   if(($result['pw']) && ($result['pw'] == $_GET['pw'])) solve("orc"); 
   highlight_file(__FILE__); 
 ?>
-```\\
+```
 
 
-Here we can get the actual password using a blind sql Injection . \
+Here we can get the actual password using a blind sql Injection . 
 
 
 
-## Exploit Script \\\
-
+## Exploit Script \
 
 
 ```python
