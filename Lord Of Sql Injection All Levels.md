@@ -105,7 +105,7 @@ Here it the level will be solved if we fetch the row with id = admin but in the 
 ```
 Here we can get the actual password using a blind sql Injection . 
 
-###Exploit Script 
+## Exploit Script 
 
 ```python
 import requests
