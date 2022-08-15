@@ -112,7 +112,7 @@ Here we can get the actual password using a blind sql Injection .
 
 
 
-## Exploit Script \
+## Exploit Script 
 
 
 ```python
