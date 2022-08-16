@@ -150,7 +150,7 @@ while 1:
 ##### Source code
 
 
-```php=
+```php
 <?php 
   include "./config.php"; 
   login_chk(); 
