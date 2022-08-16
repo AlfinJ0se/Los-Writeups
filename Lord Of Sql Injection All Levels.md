@@ -166,6 +166,12 @@ while 1:
 ?>
 ```
 
+
+##### Here quotes are being blocked . So to get around that we can use /**/ wherever space is needed since mysql treats this as spaces .
+
+##### So the payload becomes : pw='/\**/or/**/id='admin
+
+
 ##  Level 6 - Darkelf
 
 ##### Source code
@@ -192,8 +198,3 @@ while 1:
 ##### Here OR and AND are being blocked . So to get around that we can use || and && instead since the both are equivalent in mysql . 
 
 ##### So the payload becomes : pw=' || id='admin
-
-##### Here quotes are being blocked . So to get around that we can use /**/ wherever space is needed since mysql treats this as spaces .
-
-##### So the payload becomes : pw='/\**/or/**/id='admin
-
