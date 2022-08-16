@@ -167,7 +167,7 @@ while 1:
 ```
 
 
-##### Here quotes are being blocked . So to get around that we can use /**/ wherever space is needed since mysql treats this as spaces .
+##### Here quotes are being blocked . So to get around that we can use /**/,%09, %0a, %0b, %0c, %0d, %2b, and parentheses wherever space is needed since mysql treats this as spaces .
 
 ##### So the payload becomes : pw='/\**/or/**/id='admin
 
